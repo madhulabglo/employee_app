@@ -85,7 +85,7 @@ app.post("/api/employeelist",async(req,res,next)=>{
     try{
         const userData = await data.create({name,location,position,salary})
         console.log(userData,"data")
-            if(name === undefined || location === undefined || position === undefined || salary === undefined || name === "" && location === "" && position === "" && salary === ""){
+            if(name === undefined || location === undefined || position === undefined || salary === undefined || name === "" || location === "" || position === "" || salary === ""){
                 return next(new Error("All fields are required"))
             }
             else if(name != "" && location != "" && position!= "" && salary != ""){
